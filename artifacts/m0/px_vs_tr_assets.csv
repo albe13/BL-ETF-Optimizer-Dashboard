@@ -1,0 +1,11 @@
+asset_class,ISIN,income_treatment,base_currency_basis,window_start,window_end,cumulative_px_last_return_eur,cumulative_total_return_eur,difference_tr_minus_px,finding
+Equity,IE00B4L5Y983,Accumulating,EUR_TRANSLATED_FROM_USD,2016-10-06,2026-10-05,2.4017746831116513,2.4017746831116513,0.0,TOTAL_RETURN identical to PX_LAST on every date: no distributions (accumulating/no-income)
+Government Bonds,LU0378818131,Accumulating,EUR_NATIVE,2016-10-06,2026-10-05,-0.1271292423131657,-0.1271292423131657,0.0,TOTAL_RETURN identical to PX_LAST on every date: no distributions (accumulating/no-income)
+Investment Grade Credit,IE00B9M6SJ31,Distributing,EUR_NATIVE,2016-10-06,2026-10-05,-0.24730053436521104,0.007103372028745225,0.25440390639395627,20 distribution ex-dates (2.0/yr) reinvested in TOTAL_RETURN
+Gold,IE00B579F325,No income (physical ETC),EUR_NATIVE,2016-10-06,2026-10-05,2.2301883359112,2.2301883359112,0.0,TOTAL_RETURN identical to PX_LAST on every date: no distributions (accumulating/no-income)
+Private Equity Proxy,LU0322250712,Accumulating,EUR_NATIVE,2016-10-06,2026-10-05,1.4772569845301318,1.4772569845301318,0.0,TOTAL_RETURN identical to PX_LAST on every date: no distributions (accumulating/no-income)
+Emerging Debt,IE00B9M6RS56,Distributing,EUR_NATIVE,2016-10-06,2026-10-05,-0.3907486886027658,-0.0019799713876966774,0.3887687172150691,120 distribution ex-dates (12.0/yr) reinvested in TOTAL_RETURN
+Securitized,IE00BZ6V7883,Distributing,EUR_TRANSLATED_FROM_USD,2016-10-06,2026-10-05,-0.21553799900178194,0.05560828962430242,0.27114628862608436,20 distribution ex-dates (2.0/yr) reinvested in TOTAL_RETURN
+Real Estate,IE00B8GF1M35,Distributing,EUR_NATIVE,2016-10-06,2026-10-05,0.006973058637083973,0.31072266244057034,0.30374960380348637,40 distribution ex-dates (4.0/yr) reinvested in TOTAL_RETURN
+Inflation Linked,IE00B3B8PX14,Accumulating,EUR_NATIVE,2016-10-06,2026-10-05,0.02560870191615039,0.02560870191615039,0.0,TOTAL_RETURN identical to PX_LAST on every date: no distributions (accumulating/no-income)
+Convertibles,IE00BNH72088,Distributing,EUR_NATIVE,2016-10-06,2026-10-05,1.1307075636110144,1.2210596026490066,0.09035203903799216,20 distribution ex-dates (2.0/yr) reinvested in TOTAL_RETURN

@@ -1,0 +1,292 @@
+{
+ "generated": "2026-10-14T10:20:07+00:00",
+ "python": "3.9.6",
+ "package_root": "BL_ETF_OPTIMIZER_STREAMLIT_DEPLOY",
+ "passed": 47,
+ "total": 47,
+ "elapsed_s": 4.2,
+ "results": [
+  {
+   "category": "structure",
+   "check": "streamlit_app.py present at the expected location",
+   "status": "PASS",
+   "detail": ""
+  },
+  {
+   "category": "structure",
+   "check": "requirements.txt present at the expected location",
+   "status": "PASS",
+   "detail": ""
+  },
+  {
+   "category": "structure",
+   "check": "README.md present at the expected location",
+   "status": "PASS",
+   "detail": ""
+  },
+  {
+   "category": "structure",
+   "check": "DEPLOYMENT_CHECKLIST.md present at the expected location",
+   "status": "PASS",
+   "detail": ""
+  },
+  {
+   "category": "structure",
+   "check": ".gitignore present at the expected location",
+   "status": "PASS",
+   "detail": ""
+  },
+  {
+   "category": "structure",
+   "check": ".streamlit/config.toml present at the expected location",
+   "status": "PASS",
+   "detail": ""
+  },
+  {
+   "category": "structure",
+   "check": "artifacts/ARTIFACT_MANIFEST.json present at the expected location",
+   "status": "PASS",
+   "detail": ""
+  },
+  {
+   "category": "structure",
+   "check": "bldash/__init__.py present at the expected location",
+   "status": "PASS",
+   "detail": ""
+  },
+  {
+   "category": "structure",
+   "check": "bldash/core/store.py present at the expected location",
+   "status": "PASS",
+   "detail": ""
+  },
+  {
+   "category": "structure",
+   "check": "bldash/views/p01_overview.py present at the expected location",
+   "status": "PASS",
+   "detail": ""
+  },
+  {
+   "category": "structure",
+   "check": "entry point is at the package root (no nested app folder)",
+   "status": "PASS",
+   "detail": ""
+  },
+  {
+   "category": "structure",
+   "check": "no symbolic links in the package",
+   "status": "PASS",
+   "detail": ""
+  },
+  {
+   "category": "structure",
+   "check": "no Git metadata or virtual environment in the package",
+   "status": "PASS",
+   "detail": ""
+  },
+  {
+   "category": "integrity",
+   "check": "bundle manifest loads; every listed table is registered, unredacted copies are pinned to the frozen contracts, no EXCLUDE table listed",
+   "status": "PASS",
+   "detail": "[]"
+  },
+  {
+   "category": "integrity",
+   "check": "every bundled file hashes to its manifest pin",
+   "status": "PASS",
+   "detail": "103 files checked; mismatched []"
+  },
+  {
+   "category": "integrity",
+   "check": "the only absent tables are the EXCLUDE_FROM_DEPLOYMENT ones (never shipped)",
+   "status": "PASS",
+   "detail": "absent 17: all EXCLUDE tier"
+  },
+  {
+   "category": "integrity",
+   "check": "no required table missing",
+   "status": "PASS",
+   "detail": "[]"
+  },
+  {
+   "category": "integrity",
+   "check": "all bundle paths are relative and inside artifacts/",
+   "status": "PASS",
+   "detail": ""
+  },
+  {
+   "category": "integrity",
+   "check": "ten frozen sources pinned (contract sha256 + manifest sha256) with FROZEN / pinned status",
+   "status": "PASS",
+   "detail": "{'bl2': 'FROZEN', 'p7': 'FROZEN', 'p6': 'FROZEN', 'p5': 'FROZEN', 'p4': 'FROZEN', 'p3': 'FROZEN', 'p2': 'FROZEN', 'p1': 'FROZEN', 'm0': 'PINNED_BY_BL2_CONTRACT', 'cfg': ''}"
+  },
+  {
+   "category": "integrity",
+   "check": "bundle tiers are SAFE_TO_PUBLISH and REQUIRES_LICENSE_REVIEW only (EXCLUDE never, nothing redacted)",
+   "status": "PASS",
+   "detail": "['REQUIRES_LICENSE_REVIEW', 'SAFE_TO_PUBLISH']"
+  },
+  {
+   "category": "reconciliation",
+   "check": "displayed vol / Sharpe / CAGR / max drawdown / TE / IR reproduce the stored metrics for BL 1.0, BL 2.0 and the benchmark",
+   "status": "PASS",
+   "detail": "max abs difference 1.11e-16"
+  },
+  {
+   "category": "reconciliation",
+   "check": "BL 1.0 and benchmark metrics in the BL 2.0 run equal the frozen Phase 7 backtest (S1_BL, S2_GMP_REBALANCED)",
+   "status": "PASS",
+   "detail": ""
+  },
+  {
+   "category": "reconciliation",
+   "check": "headline CAGR 8.69 % (BL 1.0), 8.55 % (BL 2.0), 7.07 % (benchmark)",
+   "status": "PASS",
+   "detail": "BL1_FROZEN: 8.69%, BL2_TREND_ONLY: 8.55%, BENCH_REBALANCED: 7.07%"
+  },
+  {
+   "category": "reconciliation",
+   "check": "only BL 1.0, BL 2.0 and the strategic benchmark are the compared strategies (no Buy & Hold, S&P 500 or MSCI World series)",
+   "status": "PASS",
+   "detail": "['BENCH_REBALANCED', 'BL1_FROZEN', 'BL2_TREND_ONLY', 'BL2_EQUILIBRIUM_ONLY', 'BL2_EXPERIMENTAL_REVISED_MACRO', 'BL2_EQUILIBRIUM_ONLY_H1', 'ABL_H1_BL2_VIEWS', 'ABL_BL1_VIEWS_BL2_ALLOCATION', 'ABL_RELATIVE_ONLY', 'ABL_COMMON_ONLY', 'ABL_DIAG_OMEGA', 'ABL_IC_EFF_LOW', 'ABL_IC_EFF_HIGH', 'ABL_H6_BL2_VIEWS']"
+  },
+  {
+   "category": "alignment",
+   "check": "84 decision dates in the bundle metadata equal the Phase 7 execution calendar",
+   "status": "PASS",
+   "detail": ""
+  },
+  {
+   "category": "alignment",
+   "check": "BL 1.0 and BL 2.0 target weights on every decision date sum to one and are long-only; benchmark weights sum to one",
+   "status": "PASS",
+   "detail": ""
+  },
+  {
+   "category": "alignment",
+   "check": "views, posterior, trend and macro tables carry the same 84 decision dates",
+   "status": "PASS",
+   "detail": ""
+  },
+  {
+   "category": "alignment",
+   "check": "macro vintage statement present (ACTUAL revised, surprise REVISED_DATA_PROXY) so the vintage warning stays visible",
+   "status": "PASS",
+   "detail": ""
+  },
+  {
+   "category": "etf",
+   "check": "ten ETF identities with full name, ticker, ISIN and asset-class group",
+   "status": "PASS",
+   "detail": ""
+  },
+  {
+   "category": "etf",
+   "check": "ten EUR total-return series bundled (M0 levels, 2016-10-06 onward, no gaps on the valuation calendar)",
+   "status": "PASS",
+   "detail": "2491 dates, 2016-10-06 \u2192 2026-10-05"
+  },
+  {
+   "category": "etf",
+   "check": "ETF monthly returns from the bundled levels equal the stored sleeve returns of the backtest (10 ETFs \u00d7 83 periods)",
+   "status": "PASS",
+   "detail": "max abs difference 0.00e+00"
+  },
+  {
+   "category": "rendering",
+   "check": "all ten pages and the entry point render without exception in bundle mode (11 runs, 1s)",
+   "status": "PASS",
+   "detail": ""
+  },
+  {
+   "category": "etf",
+   "check": "ETF Market Performance page renders the comparative chart, the ten individual ETF panels and the risk charts (14 Plotly figures)",
+   "status": "PASS",
+   "detail": "14 Plotly figures"
+  },
+  {
+   "category": "rendering",
+   "check": "every analytical page carries at least one Plotly figure (pages 1\u20138)",
+   "status": "PASS",
+   "detail": "{'p01_overview': 3, 'p02_allocation': 9, 'p03_etf': 14, 'p04_performance': 17, 'p05_engine': 17, 'p06_macro': 17, 'p07_trend': 20, 'p08_decisions': 4}"
+  },
+  {
+   "category": "rendering",
+   "check": "entry point builds the navigation and renders the default page",
+   "status": "PASS",
+   "detail": ""
+  },
+  {
+   "category": "rendering",
+   "check": "date-aware pages (allocation, engine, macro, trend, decisions) render on 3 historical decision dates (15 runs, 2s)",
+   "status": "PASS",
+   "detail": ""
+  },
+  {
+   "category": "isolation",
+   "check": "no import of the model engines, solvers, Bloomberg or network libraries in the app code",
+   "status": "PASS",
+   "detail": "[]"
+  },
+  {
+   "category": "isolation",
+   "check": "app imports resolve from the package alone (no reference to the original bl_dashboard namespace, no sys.path entry outside the package)",
+   "status": "PASS",
+   "detail": ""
+  },
+  {
+   "category": "dependencies",
+   "check": "requirements pinned (==) for streamlit, plotly, pandas, numpy, PyYAML, pyarrow",
+   "status": "PASS",
+   "detail": ""
+  },
+  {
+   "category": "dependencies",
+   "check": "installed versions equal the pins (Python 3.9.6)",
+   "status": "PASS",
+   "detail": "{'streamlit': '1.50.0', 'plotly': '7.1.0', 'pandas': '2.3.3', 'numpy': '2.0.2', 'PyYAML': '6.0.3', 'pyarrow': '21.0.0'}"
+  },
+  {
+   "category": "security",
+   "check": "no dot-env, key, certificate, token or secrets files",
+   "status": "PASS",
+   "detail": ""
+  },
+  {
+   "category": "security",
+   "check": "no .DS_Store, cache, log or temporary files",
+   "status": "PASS",
+   "detail": ""
+  },
+  {
+   "category": "security",
+   "check": "no byte-code or test cache directories left in the package (caches created by this run were removed)",
+   "status": "PASS",
+   "detail": ""
+  },
+  {
+   "category": "security",
+   "check": "no hard-coded credentials, API keys or tokens in any text file of the package",
+   "status": "PASS",
+   "detail": "[]"
+  },
+  {
+   "category": "security",
+   "check": "no absolute local paths in any text file of the package",
+   "status": "PASS",
+   "detail": "[]"
+  },
+  {
+   "category": "security",
+   "check": "config.toml collects no usage statistics and needs no secrets",
+   "status": "PASS",
+   "detail": ""
+  },
+  {
+   "category": "inventory",
+   "check": "package inventory written (136 files, 18.2 MB)",
+   "status": "PASS",
+   "detail": ""
+  }
+ ]
+}

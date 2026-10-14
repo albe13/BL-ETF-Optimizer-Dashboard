@@ -1,0 +1,11 @@
+view_id,potential_row,asset_class,asset_index,isin,ticker,pi_position,sigma_position,source_mode,b_growth,b_inflation,validity_rule,p_row
+ABS_EQUITY,0,Equity,0,IE00B4L5Y983,IWDA LN Equity,0,0,TREND_PLUS_MACRO,1,0,trend_score VALID and growth axis VALID,e_0 (unit row selecting sleeve Equity)
+ABS_GOVERNMENT_BONDS,1,Government Bonds,1,LU0378818131,DBZB GY Equity,1,1,TREND_PLUS_MACRO,-1,-1,trend_score VALID and growth axis VALID and inflation axis VALID,e_1 (unit row selecting sleeve Government Bonds)
+ABS_INVESTMENT_GRADE_CREDIT,2,Investment Grade Credit,2,IE00B9M6SJ31,IBCQ GY Equity,2,2,TREND_PLUS_MACRO,0,-1,trend_score VALID and inflation axis VALID,e_2 (unit row selecting sleeve Investment Grade Credit)
+ABS_GOLD,3,Gold,3,IE00B579F325,SGLD IM Equity,3,3,TREND_ONLY,0,0,trend_score VALID,e_3 (unit row selecting sleeve Gold)
+ABS_PRIVATE_EQUITY_PROXY,4,Private Equity Proxy,4,LU0322250712,XLPE IM Equity,4,4,TREND_PLUS_MACRO,1,0,trend_score VALID and growth axis VALID,e_4 (unit row selecting sleeve Private Equity Proxy)
+ABS_EMERGING_DEBT,5,Emerging Debt,5,IE00B9M6RS56,EMBE IM Equity,5,5,TREND_ONLY,0,0,trend_score VALID,e_5 (unit row selecting sleeve Emerging Debt)
+ABS_SECURITIZED,6,Securitized,6,IE00BZ6V7883,IMBS LN Equity,6,6,TREND_ONLY,0,0,trend_score VALID,e_6 (unit row selecting sleeve Securitized)
+ABS_REAL_ESTATE,7,Real Estate,7,IE00B8GF1M35,SPYJ GY Equity,7,7,TREND_PLUS_MACRO,1,0,trend_score VALID and growth axis VALID,e_7 (unit row selecting sleeve Real Estate)
+ABS_INFLATION_LINKED,8,Inflation Linked,8,IE00B3B8PX14,IUS5 GY Equity,8,8,TREND_PLUS_MACRO,-1,0,trend_score VALID and growth axis VALID,e_8 (unit row selecting sleeve Inflation Linked)
+ABS_CONVERTIBLES,9,Convertibles,9,IE00BNH72088,CONV IM Equity,9,9,TREND_ONLY,0,0,trend_score VALID,e_9 (unit row selecting sleeve Convertibles)

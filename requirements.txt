@@ -1,0 +1,9 @@
+# BL ETF Optimizer dashboard — pinned to the versions it was built and validated with (2026-10-14).
+# Python 3.9–3.12 (validated on 3.9.6 locally; select Python 3.11 or 3.12 in Streamlit Community Cloud "Advanced settings").
+# Python 3.13 is NOT supported by numpy==2.0.2. The app reads bundled CSV/JSON artifacts only: no solver, no Bloomberg, no network access at run time.
+streamlit==1.50.0
+plotly==7.1.0
+pandas==2.3.3
+numpy==2.0.2
+PyYAML==6.0.3
+pyarrow==21.0.0

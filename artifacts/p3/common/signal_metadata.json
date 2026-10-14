@@ -1,0 +1,120 @@
+{
+  "phase": 3,
+  "version": "v1.1",
+  "units": "dimensionless",
+  "semantics": "Dimensionless trend evidence: +1 = strongest positive trend, 0 = neutral / mixed, -1 = strongest negative trend. NOT an expected (excess or total) return, NOT a probability, NOT a portfolio weight, NOT alpha, NOT a Black-Litterman view Q.",
+  "return_basis": "EXCESS_OVER_EUR_CASH",
+  "excess_convention": "ARITHMETIC_DIFFERENCE",
+  "trend_score": "tanh(k * continuous_composite), k = 1; in [-1, +1]",
+  "directional_trend": "mean over horizons of sign(R_h - c_h); in [-1, +1]",
+  "continuous_h": "(R_h - c_h) / (sigma * sqrt(h/12)); sigma = frozen Phase 1 P1_EWMA_63 annualized sleeve volatility; c_h = realized EONIA->ESTR cash return over the same (base, t]",
+  "cash": {
+    "source": "EONIA_ESTR_BOOK",
+    "book": "EONIA->ESTR",
+    "accrual": "ACT360_TARGET_COMPOUNDED",
+    "interval": "SAME_AS_TREND_HORIZON",
+    "availability": "PUBLISHED_BY_DECISION_TIME",
+    "decision_time_local": "17:30",
+    "decision_time_zone": "Europe/Berlin",
+    "missing_rate": "FAIL_CLOSED",
+    "extrapolation": "NONE"
+  },
+  "total_return_momentum": "diagnostics/total_return_momentum.csv (DIAGNOSTIC ONLY; the v1 engine on R_h)",
+  "horizons_months": [
+    1,
+    3,
+    12
+  ],
+  "aggregation": "EQUAL_WEIGHT",
+  "date_alignment": "model date t = last common observed date of the calendar month (Phase 2 contract dates); base = sleeve's last own observation on or before t - h months; only data dated <= t",
+  "source_series": {
+    "Equity": {
+      "ticker": "IWDA LN Equity",
+      "ISIN": "IE00B4L5Y983",
+      "field": "TOTAL_RETURN",
+      "currency_basis": "EUR_TRANSLATED_FROM_USD",
+      "fx_translation": "W_EUR = W_USD / EURUSD (EXR.D.USD.EUR.SP00.A); not hedged; alignment counts {'SAME_DAY': 2519, 'PRIOR_FIXING_NON_TARGET_DAY': 6, 'OUTSIDE_FX_COVERAGE': 1}",
+      "workbook": "data/raw/ETF_History2.xlsx (via the validated M0 data stage)"
+    },
+    "Government Bonds": {
+      "ticker": "DBZB GY Equity",
+      "ISIN": "LU0378818131",
+      "field": "TOTAL_RETURN",
+      "currency_basis": "EUR_NATIVE",
+      "fx_translation": "NONE",
+      "workbook": "data/raw/ETF_History2.xlsx (via the validated M0 data stage)"
+    },
+    "Investment Grade Credit": {
+      "ticker": "IBCQ GY Equity",
+      "ISIN": "IE00B9M6SJ31",
+      "field": "TOTAL_RETURN",
+      "currency_basis": "EUR_NATIVE",
+      "fx_translation": "NONE",
+      "workbook": "data/raw/ETF_History2.xlsx (via the validated M0 data stage)"
+    },
+    "Gold": {
+      "ticker": "SGLD IM Equity",
+      "ISIN": "IE00B579F325",
+      "field": "TOTAL_RETURN",
+      "currency_basis": "EUR_NATIVE",
+      "fx_translation": "NONE",
+      "workbook": "data/raw/ETF_History2.xlsx (via the validated M0 data stage)"
+    },
+    "Private Equity Proxy": {
+      "ticker": "XLPE IM Equity",
+      "ISIN": "LU0322250712",
+      "field": "TOTAL_RETURN",
+      "currency_basis": "EUR_NATIVE",
+      "fx_translation": "NONE",
+      "workbook": "data/raw/ETF_History2.xlsx (via the validated M0 data stage)"
+    },
+    "Emerging Debt": {
+      "ticker": "EMBE IM Equity",
+      "ISIN": "IE00B9M6RS56",
+      "field": "TOTAL_RETURN",
+      "currency_basis": "EUR_NATIVE",
+      "fx_translation": "NONE",
+      "workbook": "data/raw/ETF_History2.xlsx (via the validated M0 data stage)"
+    },
+    "Securitized": {
+      "ticker": "IMBS LN Equity",
+      "ISIN": "IE00BZ6V7883",
+      "field": "TOTAL_RETURN",
+      "currency_basis": "EUR_TRANSLATED_FROM_USD",
+      "fx_translation": "W_EUR = W_USD / EURUSD (EXR.D.USD.EUR.SP00.A); not hedged; alignment counts {'SAME_DAY': 2519, 'PRIOR_FIXING_NON_TARGET_DAY': 6, 'OUTSIDE_FX_COVERAGE': 1}",
+      "workbook": "data/raw/ETF_History2.xlsx (via the validated M0 data stage)"
+    },
+    "Real Estate": {
+      "ticker": "SPYJ GY Equity",
+      "ISIN": "IE00B8GF1M35",
+      "field": "TOTAL_RETURN",
+      "currency_basis": "EUR_NATIVE",
+      "fx_translation": "NONE",
+      "workbook": "data/raw/ETF_History2.xlsx (via the validated M0 data stage)"
+    },
+    "Inflation Linked": {
+      "ticker": "IUS5 GY Equity",
+      "ISIN": "IE00B3B8PX14",
+      "field": "TOTAL_RETURN",
+      "currency_basis": "EUR_NATIVE",
+      "fx_translation": "NONE",
+      "workbook": "data/raw/ETF_History2.xlsx (via the validated M0 data stage)"
+    },
+    "Convertibles": {
+      "ticker": "CONV IM Equity",
+      "ISIN": "IE00BNH72088",
+      "field": "TOTAL_RETURN",
+      "currency_basis": "EUR_NATIVE",
+      "fx_translation": "NONE",
+      "workbook": "data/raw/ETF_History2.xlsx (via the validated M0 data stage)"
+    }
+  },
+  "not": [
+    "expected excess return",
+    "expected total return",
+    "probability",
+    "portfolio weight",
+    "alpha",
+    "Black-Litterman view Q"
+  ]
+}

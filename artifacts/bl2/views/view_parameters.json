@@ -1,0 +1,46 @@
+{
+ "bl1_comparison": {
+  "effective_kappa_unit_signal": 0.1656,
+  "implied_monthly_ic": 0.047804602288901016,
+  "implied_monthly_ic_after_lambda1": 0.023902301144450508,
+  "kappa_bl1": 0.3,
+  "sd_bl1_tanh_score": 0.552
+ },
+ "clip": 3.0,
+ "derivation": "Delta_annual = sqrt(12) * IC * sigma_annual * z (unit-variance z); kappa = sqrt(12) * w, w = R^-1 rho (correlation-aware combination; a family with non-positive weight is dropped and the rule re-solved); Omega = lambda tau P Sigma P' (full) => d = Delta/(1+lambda) with a view on every sleeve",
+ "effective_ic_production": {
+  "policy_repricing": 0.0,
+  "trend": 0.06
+ },
+ "ic": {
+  "macro_news": 0.08,
+  "policy_repricing": 0.04,
+  "trend": 0.12
+ },
+ "kappa_experimental": {
+  "macro_news": 0.27712812921102037,
+  "policy_repricing": 0.0,
+  "trend": 0.4156921938165305
+ },
+ "kappa_production": {
+  "policy_repricing": 0.0,
+  "trend": 0.4156921938165305
+ },
+ "lambda": 1.0,
+ "policy_excluded_by_rule": true,
+ "signal_correlation": {
+  "macro_news|policy_repricing": 0.0,
+  "trend|macro_news": 0.0,
+  "trend|policy_repricing": 0.65
+ },
+ "sqrt12": true,
+ "weights_experimental": {
+  "macro_news": 0.08,
+  "policy_repricing": 0.0,
+  "trend": 0.12
+ },
+ "weights_production": {
+  "policy_repricing": 0.0,
+  "trend": 0.12
+ }
+}

@@ -1,0 +1,11 @@
+sleeve,ISIN,ticker,sessions_in_window,first_level_date,last_level_date,missing_in_window,finite,positive
+Equity,IE00B4L5Y983,IWDA LN Equity,1726,2016-10-06,2026-10-05,0,True,True
+Government Bonds,LU0378818131,DBZB GY Equity,1726,2016-10-06,2026-10-05,0,True,True
+Investment Grade Credit,IE00B9M6SJ31,IBCQ GY Equity,1726,2016-10-06,2026-10-05,0,True,True
+Gold,IE00B579F325,SGLD IM Equity,1726,2016-10-06,2026-10-05,0,True,True
+Private Equity Proxy,LU0322250712,XLPE IM Equity,1726,2016-10-06,2026-10-05,0,True,True
+Emerging Debt,IE00B9M6RS56,EMBE IM Equity,1726,2016-10-06,2026-10-05,0,True,True
+Securitized,IE00BZ6V7883,IMBS LN Equity,1726,2016-10-06,2026-10-05,0,True,True
+Real Estate,IE00B8GF1M35,SPYJ GY Equity,1726,2016-10-06,2026-10-05,0,True,True
+Inflation Linked,IE00B3B8PX14,IUS5 GY Equity,1726,2016-10-06,2026-10-05,0,True,True
+Convertibles,IE00BNH72088,CONV IM Equity,1726,2016-10-06,2026-10-05,0,True,True

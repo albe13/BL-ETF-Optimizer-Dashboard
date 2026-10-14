@@ -1,0 +1,88 @@
+{
+ "cash_provenance": {
+  "accrual": "ACT360_TARGET_COMPOUNDED",
+  "availability": "PUBLISHED_BY_DECISION_TIME",
+  "book": "EONIA->ESTR",
+  "decision_time_local": "17:30",
+  "decision_time_zone": "Europe/Berlin",
+  "extrapolation": "NONE",
+  "files": {
+   "eonia_file": {
+    "m0_manifest_sha256": "e3dab718d57b468346ac7639480d47800fc73215cc6575fb840308dc14481cd8",
+    "path": "data/raw/ecb/ECB_EONIA_EON.D.EONIA_TO.RATE_20261005T100341Z.csv",
+    "provenance_route": "M0_MANIFEST_PINNED",
+    "sha256": "e3dab718d57b468346ac7639480d47800fc73215cc6575fb840308dc14481cd8"
+   },
+   "estr_file": {
+    "extension": {
+     "added_reference_dates": {
+      "2026-09-29": 2.439,
+      "2026-09-30": 2.437
+     },
+     "dates_inserted_inside_pinned_range": 0,
+     "download": {
+      "authorized_by": "user instruction 2026-10-09 (narrowly scoped ESTR refresh for model date 2026-09-30)",
+      "http_date": "Fri, 09 Oct 2026 07:42:46 GMT",
+      "http_last_modified": "Fri, 09 Oct 2026 06:05:24 GMT",
+      "http_status": 200,
+      "timestamp_utc": "2026-10-09T07:42:45Z"
+     },
+     "extends_path": "data/raw/ecb/ECB_ESTR_20260929164640.csv",
+     "extends_sha256": "80cc4d8a87be6ec0a4d2144c0eb65ae8b9935048b01a571af6f19ed9cba3662c",
+     "ok": true,
+     "original_location": "https://data-api.ecb.europa.eu/service/data/EST/B.EU000A2X2A25.WT?format=csvdata&startPeriod=2019-10-01&endPeriod=2026-09-30",
+     "overlap_max_abs_diff_percent": 0.0,
+     "pinned_dates_missing_in_extension": 0,
+     "pinned_last_reference_date": "2026-09-28",
+     "pinned_reference_dates": 1791,
+     "publication_verification": {
+      "2026-09-29": "last updated in (2026-09-30T08:05+02:00, 2026-09-30T08:30+02:00]: before the 09:00 CET schedule rule and the 17:30 Europe/Berlin decision time of model date 2026-09-30",
+      "2026-09-30": "last updated in (2026-10-01T08:00+02:00, 2026-10-01T08:30+02:00] (T+1 schedule); it accrues only over (2026-09-30, 2026-10-01], so no model date uses it",
+      "crosscheck_official_compounded_index": "implied ACT/360 rates from the M0-pinned compounded index: 2026-09-29 2.4390007%, 2026-09-30 2.4370009%",
+      "method": "ECB data API updatedAfter brackets on the series (observations last updated after the given instant)",
+      "no_revision_since_pinned_download": "updatedAfter=2026-09-29T16:46:40+02:00 over 2019-10-01..2026-09-30 returns only 2026-09-29 and 2026-09-30"
+     },
+     "reasons": [],
+     "registry_status": "CANDIDATE_AUTHORITATIVE"
+    },
+    "m0_manifest_sha256": "80cc4d8a87be6ec0a4d2144c0eb65ae8b9935048b01a571af6f19ed9cba3662c",
+    "path": "data/raw/ecb/ECB_ESTR_EST.B.EU000A2X2A25.WT_20261009T074245Z.csv",
+    "provenance_route": "REGISTERED_EXTENSION_OF_M0_PINNED",
+    "sha256": "01b1dfd53e25e8cb1496decce8e3954753d82f4a7222e697fc7c3a4743fdfa4b"
+   }
+  },
+  "files_match_m0_manifest": false,
+  "first_reference_date": "1999-01-04",
+  "interval": "SAME_AS_TREND_HORIZON",
+  "last_reference_date": "2026-09-30",
+  "missing_rate": "FAIL_CLOSED",
+  "provenance_ok": true,
+  "provenance_rule": "M0_PINNED_OR_REGISTERED_EXTENSION",
+  "publication_rules": {
+   "EONIA": "same TARGET day, published 18:45-19:00 CET (pre-reform methodology)",
+   "ESTR": "T+1 TARGET day, 08:00 CET publication, 09:00 CET republication window"
+  },
+  "publication_time_provenance": [
+   "SCHEDULE_DERIVED"
+  ],
+  "registry": "data/raw/DATA_REGISTRY.json",
+  "source": "EONIA_ESTR_BOOK",
+  "splice": "EONIA for reference dates before 2019-10-01, ESTR from 2019-10-01 (no spread adjustment)",
+  "vintage_status": [
+   "FINAL_AS_DOWNLOADED"
+  ]
+ },
+ "convention_field": "trend_score_tanh = tanh(composite_z), BL 1.0 comparability only",
+ "decomposition": "composite_z = cs_common_z + cs_relative_z (equal-weight mean over VALID sleeves; benchmark-weighted mean also published)",
+ "horizons_months": [
+  1,
+  3,
+  12
+ ],
+ "no_return_units": true,
+ "not_a_forecast": true,
+ "production_field": "composite_z (and composite_unit = composite_z / 0.80)",
+ "return_basis": "EXCESS_OVER_EUR_CASH",
+ "semantics": "composite_z: dimensionless trend strength in volatility units (unbounded); cs_common_z: date-level mean over VALID sleeves (market-direction component); cs_relative_z: exact complement (relative trend strength). NOT expected returns, NOT forecasts, NOT probabilities, NOT weights, NOT Black-Litterman views. trend_score_tanh is a bounding convention (k = 1) kept for BL 1.0 comparability; *_unit fields divide by the structural constant 0.80 (unit scale under i.i.d. returns).",
+ "sigma_source": "frozen Phase 1 P1_EWMA_63 (independently recomputed)"
+}

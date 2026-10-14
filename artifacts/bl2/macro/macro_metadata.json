@@ -1,0 +1,32 @@
+{
+ "availability_convention": "reference month M usable from model month M + k (k >= 1 per registry); one month of grace; never M + 0",
+ "market_sampling": "last genuine business-day quote <= decision date (H.15: minus one business day); stale after 7 days",
+ "registry_sha256": "d88f0fb80909303cefacf107f868a58a8b71faeeed6812f8a7f826879fa3e741",
+ "roles": {
+  "fincond_level": "RISK_DIAGNOSTIC",
+  "fincond_stress": "RISK_DIAGNOSTIC_STRESS_FLAG",
+  "growth_news": "EXPERIMENTAL_VIEW_INPUT_REVISED_DATA_PROXY",
+  "growth_state": "REGIME_DIAGNOSTIC",
+  "inflation_expectation_repricing": "DIAGNOSTIC",
+  "inflation_news": "EXPERIMENTAL_VIEW_INPUT_REVISED_DATA_PROXY",
+  "inflation_state": "REGIME_DIAGNOSTIC",
+  "policy_repricing": "DIAGNOSTIC_EXCLUDED_BY_COMBINATION_RULE",
+  "realrate_change": "DIAGNOSTIC",
+  "volatility_vix_move": "RISK_DIAGNOSTIC"
+ },
+ "semantics": "standardized MEASUREMENTS and diagnostics; NOT forecasts, NOT views; news != state != expectation; surprise fields are REVISED_DATA_PROXY (ACTUAL revised, SURVEY point-in-time)",
+ "vintage": {
+  "actual": "REVISED",
+  "surprise_status": "REVISED_DATA_PROXY",
+  "survey": "POINT_IN_TIME"
+ },
+ "workbook_hashes": {
+  "EUROZONE REGIME DATA.xlsx": "a8226e3462030b0f74850c4a716af1998c71666d1fc65144d5697bfeabd63aa2",
+  "GOVERNMENT BOND YIELDS - USA & GERMANY.xlsx": "5c73cca28771ef37090fed0a5a52644f9c1c66b2a5032ea37d2519ad5fbb38e7",
+  "INDICATORS DATA.xlsx": "83b46fd7446a6cd028b342ca71127aef8c1e2ee20b66b4ed1392f911b4a2a580",
+  "INFLATION EXPECTATIONS DATA.xlsx": "70acfac92dd051bf6d9d6697bc29111276b2d2baac2c48c987c7f393d151edb7",
+  "MONETARY POLICY EXPECTATIONS DATA.xlsx": "e21b8d8148fa854912e4eb51e1b056e15ce056246f224a4144c5ddcfb5c78b5f",
+  "REAL YIELDS - USA & GERMANY.xlsx": "b6546152dbb2992844b222ab86bbc6464b7b265a7da9c625cd1ae817822f3209",
+  "US ECONOMIC REGIME DATA.xlsx": "93a5d27e1be9942afbee558f6d73d70c9510879cbdd71f1ea7a57939e7caf136"
+ }
+}

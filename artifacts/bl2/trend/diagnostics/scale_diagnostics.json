@@ -1,0 +1,52 @@
+{
+ "checks": {
+  "cs_valid_dates": 84,
+  "decomposition_max_abs_residual": 0.0,
+  "relative_sum_max_abs": 1.7763568394002505e-15,
+  "reproduction": {
+   "composite_bitwise": true,
+   "directional_bitwise": true,
+   "excess_bitwise": true,
+   "legs_bitwise": true,
+   "rows": 840,
+   "status_equal": true,
+   "tanh_bitwise": true
+  },
+  "volatility_recompute_max_rel_err": 0.0
+ },
+ "horizon_set_correlations": {
+  "3_6_12": 0.923930368864328
+ },
+ "scale": {
+  "common_ar1": 0.4850532630149003,
+  "common_mean": 0.19533856238124367,
+  "common_sd": 0.5009953247596589,
+  "common_variance_share": 0.387509728382132,
+  "composite_ar1_by_sleeve": {
+   "Convertibles": 0.5608160776134936,
+   "Emerging Debt": 0.48806071201583406,
+   "Equity": 0.5161288311087484,
+   "Gold": 0.5197181730295534,
+   "Government Bonds": 0.5668607835005584,
+   "Inflation Linked": 0.5025902580868395,
+   "Investment Grade Credit": 0.5871802400887237,
+   "Private Equity Proxy": 0.6459162292467225,
+   "Real Estate": 0.46685020646740205,
+   "Securitized": 0.4862061476676021
+  },
+  "composite_pooled_sd": 0.8048081545804139,
+  "composite_unit_pooled_sd": 1.0060101932255172,
+  "expected_sign_run_months": 3.1184134198601776,
+  "legs_pooled_sd": {
+   "z_12m": 1.1307239259936728,
+   "z_1m": 0.9488181917064467,
+   "z_3m": 0.8935328578139472
+  },
+  "mean_ar1": 0.5340327658825477,
+  "relative_pooled_sd": 0.6319907450147543,
+  "share_abs_composite_gt_1": 0.21904761904761905,
+  "share_abs_unit_gt_3": 0.002380952380952381,
+  "sign_persistence_prob": 0.679324109615704,
+  "theoretical_scale_constant": 0.8
+ }
+}

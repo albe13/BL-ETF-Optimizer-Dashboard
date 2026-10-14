@@ -1,0 +1,1030 @@
+{
+ "blocking_failures": [],
+ "checks": [
+  {
+   "blocking": true,
+   "category": "upstream",
+   "check": "Phase 1 contract FROZEN with the expected run id",
+   "detail": "",
+   "status": "PASS",
+   "tolerance": null,
+   "value": "P1_RISK_20261006T122451Z_048a8c67_c3142161 / 4f14d35f503ebaa8"
+  },
+  {
+   "blocking": true,
+   "category": "upstream",
+   "check": "Phase 2 contract FROZEN with the expected run id",
+   "detail": "",
+   "status": "PASS",
+   "tolerance": null,
+   "value": "P2_EQPRIOR_20261006T140630Z_399ec9d2_c3142161 / 1035fb295f83f4d4"
+  },
+  {
+   "blocking": true,
+   "category": "upstream",
+   "check": "Phase 3 contract FROZEN with the expected run id",
+   "detail": "",
+   "status": "PASS",
+   "tolerance": null,
+   "value": "P3_TREND_20261009T075004Z_97465e7b_c3142161 / 7647b467ddeb36aa"
+  },
+  {
+   "blocking": true,
+   "category": "upstream",
+   "check": "Phase 4 contract FROZEN with the expected run id",
+   "detail": "",
+   "status": "PASS",
+   "tolerance": null,
+   "value": "P4_REGIME_20261009T075144Z_698dcfe3_c3142161 / 74ba68dceff6ba27"
+  },
+  {
+   "blocking": true,
+   "category": "upstream",
+   "check": "Phase 5 contract FROZEN with the expected run id",
+   "detail": "",
+   "status": "PASS",
+   "tolerance": null,
+   "value": "P5_BLPOST_20261009T121412Z_c8ef9efd_c3142161 / 89f0c0d20283330e"
+  },
+  {
+   "blocking": true,
+   "category": "upstream",
+   "check": "Phase 6 contract FROZEN with the expected run id",
+   "detail": "",
+   "status": "PASS",
+   "tolerance": null,
+   "value": "P6_OPT_20261011T121331Z_5cef12a2_c3142161 / 8a7ae77da8946ea3"
+  },
+  {
+   "blocking": true,
+   "category": "upstream",
+   "check": "Phase 7 contract FROZEN with the expected run id",
+   "detail": "",
+   "status": "PASS",
+   "tolerance": null,
+   "value": "P7_BT_20261011T163810Z_78085c91_c3142161 / f49b91a9c4468a85"
+  },
+  {
+   "blocking": true,
+   "category": "upstream",
+   "check": "Contract chain 7 -> 6 -> 5 -> 4 -> 3 -> 2 -> 1 pinned by sha256",
+   "detail": "",
+   "status": "PASS",
+   "tolerance": null,
+   "value": "7 contracts"
+  },
+  {
+   "blocking": true,
+   "category": "upstream",
+   "check": "Phase 1 frozen run unchanged and read-only (every file vs manifest; manifest vs contract)",
+   "detail": "mismatched []; writable []",
+   "status": "PASS",
+   "tolerance": null,
+   "value": "1048 files"
+  },
+  {
+   "blocking": true,
+   "category": "upstream",
+   "check": "Phase 2 frozen run unchanged and read-only (every file vs manifest; manifest vs contract)",
+   "detail": "mismatched []; writable []",
+   "status": "PASS",
+   "tolerance": null,
+   "value": "32 files"
+  },
+  {
+   "blocking": true,
+   "category": "upstream",
+   "check": "Phase 3 frozen run unchanged and read-only (every file vs manifest; manifest vs contract)",
+   "detail": "mismatched []; writable []",
+   "status": "PASS",
+   "tolerance": null,
+   "value": "26 files"
+  },
+  {
+   "blocking": true,
+   "category": "upstream",
+   "check": "Phase 4 frozen run unchanged and read-only (every file vs manifest; manifest vs contract)",
+   "detail": "mismatched []; writable []",
+   "status": "PASS",
+   "tolerance": null,
+   "value": "18 files"
+  },
+  {
+   "blocking": true,
+   "category": "upstream",
+   "check": "Phase 5 frozen run unchanged and read-only (every file vs manifest; manifest vs contract)",
+   "detail": "mismatched []; writable []",
+   "status": "PASS",
+   "tolerance": null,
+   "value": "28 files"
+  },
+  {
+   "blocking": true,
+   "category": "upstream",
+   "check": "Phase 6 frozen run unchanged and read-only (every file vs manifest; manifest vs contract)",
+   "detail": "mismatched []; writable []",
+   "status": "PASS",
+   "tolerance": null,
+   "value": "27 files"
+  },
+  {
+   "blocking": true,
+   "category": "upstream",
+   "check": "Phase 7 frozen run unchanged and read-only (every file vs manifest; manifest vs contract)",
+   "detail": "mismatched []; writable []",
+   "status": "PASS",
+   "tolerance": null,
+   "value": "43 files"
+  },
+  {
+   "blocking": true,
+   "category": "upstream",
+   "check": "M0 run pinned by the Phase 3 manifest = configured id; unchanged and read-only",
+   "detail": "20 files",
+   "status": "PASS",
+   "tolerance": null,
+   "value": "M0_TR_EUR_20261006T102036Z_58a9b7ea_c3142161"
+  },
+  {
+   "blocking": true,
+   "category": "upstream",
+   "check": "Benchmark config hash identical across the Phase 1/2/3/5/6/7 contracts",
+   "detail": "",
+   "status": "PASS",
+   "tolerance": null,
+   "value": "29b0ceaf17d400b4"
+  },
+  {
+   "blocking": true,
+   "category": "upstream",
+   "check": "Canonical asset order identical across contracts and the benchmark",
+   "detail": "",
+   "status": "PASS",
+   "tolerance": null,
+   "value": "Equity, Government Bonds, Investment Grade Credit, Gold, Private Equity Proxy, Emerging Debt, Securitized, Real Estate, Inflation Linked, Convertibles"
+  },
+  {
+   "blocking": true,
+   "category": "upstream",
+   "check": "Model dates identical across contracts (84)",
+   "detail": "",
+   "status": "PASS",
+   "tolerance": null,
+   "value": "84 dates"
+  },
+  {
+   "blocking": true,
+   "category": "upstream",
+   "check": "Benchmark weights: decimal strings, exact sum 1, equal to the frozen config",
+   "detail": "",
+   "status": "PASS",
+   "tolerance": null,
+   "value": "sum 1"
+  },
+  {
+   "blocking": true,
+   "category": "upstream",
+   "check": "Every consumed file hashes to its contract / manifest pin",
+   "detail": "[]",
+   "status": "PASS",
+   "tolerance": null,
+   "value": "12/12"
+  },
+  {
+   "blocking": true,
+   "category": "upstream",
+   "check": "Covariance estimator = P1_LW_3Y_DAILY, the Sigma_t that generated Pi_t",
+   "detail": "",
+   "status": "PASS",
+   "tolerance": null,
+   "value": "P1_LW_3Y_DAILY"
+  },
+  {
+   "blocking": true,
+   "category": "upstream",
+   "check": "Prior: P2_EQ_SHARPE, annualized excess decimal, Pi = delta Sigma b",
+   "detail": "",
+   "status": "PASS",
+   "tolerance": null,
+   "value": "ANNUALIZED_EXCESS_RETURN_DECIMAL"
+  },
+  {
+   "blocking": true,
+   "category": "upstream",
+   "check": "Phase 3 v1.1: EXCESS_OVER_EUR_CASH basis (reproduction target of Phase 3.2)",
+   "detail": "",
+   "status": "PASS",
+   "tolerance": null,
+   "value": "v1.1"
+  },
+  {
+   "blocking": true,
+   "category": "upstream",
+   "check": "M0: M0 authoritative run is VALIDATED / FINAL / TOTAL_RETURN / EUR",
+   "detail": "M0 VALIDATED FINAL TOTAL_RETURN EUR",
+   "status": "PASS",
+   "tolerance": null,
+   "value": "M0_TR_EUR_20261006T102036Z_58a9b7ea_c3142161"
+  },
+  {
+   "blocking": true,
+   "category": "upstream",
+   "check": "M0: M0 configuration unchanged",
+   "detail": "sha256 of M0 run config + frozen benchmark",
+   "status": "PASS",
+   "tolerance": null,
+   "value": "58a9b7ea40b527fc"
+  },
+  {
+   "blocking": true,
+   "category": "upstream",
+   "check": "M0: M0 source data unchanged",
+   "detail": "workbook, ECB FX file, currency-evidence workbook",
+   "status": "PASS",
+   "tolerance": null,
+   "value": "3/3 hashes match"
+  },
+  {
+   "blocking": true,
+   "category": "upstream",
+   "check": "M0: M0 output mirror matches its manifest",
+   "detail": "",
+   "status": "PASS",
+   "tolerance": null,
+   "value": "0 mismatches"
+  },
+  {
+   "blocking": true,
+   "category": "upstream",
+   "check": "M0: Panel reproduces the stored M0 NAV",
+   "detail": "2491 M0 valuation dates; frozen weights on M0's common calendar",
+   "status": "PASS",
+   "tolerance": 1e-12,
+   "value": 6.661338147750939e-16
+  },
+  {
+   "blocking": true,
+   "category": "upstream",
+   "check": "M0 data stage run id = pinned M0 run",
+   "detail": "",
+   "status": "PASS",
+   "tolerance": null,
+   "value": "M0_TR_EUR_20261006T102036Z_58a9b7ea_c3142161"
+  },
+  {
+   "blocking": true,
+   "category": "trend",
+   "check": "Trend: Phase 3.2 reproduces the frozen Phase 3 v1.1 bitwise on every shared field (composite, tanh, legs, excess, directional, status)",
+   "detail": "{'rows': 840, 'composite_bitwise': True, 'tanh_bitwise': True, 'directional_bitwise': True, 'legs_bitwise': True, 'excess_bitwise': True, 'status_equal': True}",
+   "status": "PASS",
+   "tolerance": null,
+   "value": "840 rows"
+  },
+  {
+   "blocking": true,
+   "category": "trend",
+   "check": "Trend: EWMA-63 volatility independently recomputed = frozen Phase 1 table",
+   "detail": "tolerance 1e-12",
+   "status": "PASS",
+   "tolerance": null,
+   "value": 0.0
+  },
+  {
+   "blocking": true,
+   "category": "trend",
+   "check": "Trend: decomposition identity composite_z = cs_common_z + cs_relative_z",
+   "detail": "",
+   "status": "PASS",
+   "tolerance": null,
+   "value": 0.0
+  },
+  {
+   "blocking": true,
+   "category": "trend",
+   "check": "Trend: relative component sums to zero across VALID sleeves on every date",
+   "detail": "",
+   "status": "PASS",
+   "tolerance": null,
+   "value": 1.7763568394002505e-15
+  },
+  {
+   "blocking": true,
+   "category": "trend",
+   "check": "Trend: cross-sectional fields present iff CS_VALID and n_valid >= policy minimum",
+   "detail": "",
+   "status": "PASS",
+   "tolerance": null,
+   "value": "84 CS_VALID dates"
+  },
+  {
+   "blocking": false,
+   "category": "trend",
+   "check": "Trend: unit-scale constant 0.80 published with the realized pooled sd of composite_unit (alert band informational)",
+   "detail": "informational diagnostic, never a selection criterion",
+   "status": "PASS",
+   "tolerance": null,
+   "value": "sd 1.006; alert band [0.8, 1.25]; breached False"
+  },
+  {
+   "blocking": true,
+   "category": "trend",
+   "check": "Trend: within-date ranks of composite_z and trend_score_tanh identical (monotone convention)",
+   "detail": "",
+   "status": "PASS",
+   "tolerance": null,
+   "value": "840 rows"
+  },
+  {
+   "blocking": true,
+   "category": "trend",
+   "check": "Trend: no return-unit object (Pi, kappa, sigma_lw, posterior, view) referenced by the trend engine",
+   "detail": "",
+   "status": "PASS",
+   "tolerance": null,
+   "value": []
+  },
+  {
+   "blocking": true,
+   "category": "macro",
+   "check": "Macro: every workbook hashes to its registered sha256 (re-derived at run time)",
+   "detail": "",
+   "status": "PASS",
+   "tolerance": null,
+   "value": "7 workbooks"
+  },
+  {
+   "blocking": true,
+   "category": "macro",
+   "check": "Macro: 49 sheets / 78 series parsed; every sheet maps to one registry entry",
+   "detail": "",
+   "status": "PASS",
+   "tolerance": null,
+   "value": "78 series"
+  },
+  {
+   "blocking": true,
+   "category": "macro",
+   "check": "Macro: non-numeric tokens mapped to missing (count equals the audited 69)",
+   "detail": "",
+   "status": "PASS",
+   "tolerance": null,
+   "value": 69
+  },
+  {
+   "blocking": true,
+   "category": "macro",
+   "check": "Macro: availability lags >= 1 month for every release series (never M+0)",
+   "detail": "",
+   "status": "PASS",
+   "tolerance": null,
+   "value": "registry"
+  },
+  {
+   "blocking": true,
+   "category": "macro",
+   "check": "Macro: surprise formed only when ACTUAL and SURVEY both exist (survey-without-actual guard V2.8)",
+   "detail": "",
+   "status": "PASS",
+   "tolerance": null,
+   "value": "all production tickers"
+  },
+  {
+   "blocking": true,
+   "category": "macro",
+   "check": "Macro: normalization uses strictly prior observations (self-inclusion test V2.5)",
+   "detail": "",
+   "status": "PASS",
+   "tolerance": null,
+   "value": "synthetic"
+  },
+  {
+   "blocking": true,
+   "category": "macro",
+   "check": "Macro: MAD scale at t excludes the observation at t",
+   "detail": "",
+   "status": "PASS",
+   "tolerance": null,
+   "value": "synthetic"
+  },
+  {
+   "blocking": true,
+   "category": "macro",
+   "check": "Macro: composite VALID iff n_components >= family minimum (status exclusivity)",
+   "detail": "",
+   "status": "PASS",
+   "tolerance": null,
+   "value": "336 family-dates"
+  },
+  {
+   "blocking": true,
+   "category": "macro",
+   "check": "Macro: news composite = mean(standardized surprises) x sqrt(n) recomputed independently",
+   "detail": "",
+   "status": "PASS",
+   "tolerance": null,
+   "value": 0.0
+  },
+  {
+   "blocking": true,
+   "category": "macro",
+   "check": "Macro: every surprise/state field carries REVISED_DATA_PROXY; market fields MARKET_PIT_VERIFIED",
+   "detail": "",
+   "status": "PASS",
+   "tolerance": null,
+   "value": "long table"
+  },
+  {
+   "blocking": true,
+   "category": "macro",
+   "check": "Macro: MAD scale removes the 2020 sigma-shadow (max MAD shadow ratio < sigma60 shadow ratio for NFP)",
+   "detail": "",
+   "status": "PASS",
+   "tolerance": null,
+   "value": {
+    "max_shadow_ratio_mad": 1.8,
+    "max_shadow_ratio_sigma60": 22.93
+   }
+  },
+  {
+   "blocking": false,
+   "category": "views",
+   "check": "Views: sigma_LW (view) / sigma_EWMA (signal) ratio published (T3 dual-volatility diagnostic; alert band informational)",
+   "detail": "informational",
+   "status": "PASS",
+   "tolerance": null,
+   "value": "range [0.41, 2.06]; alert band [0.6, 1.6]; breached True"
+  },
+  {
+   "blocking": true,
+   "category": "views",
+   "check": "Views: Q - Pi = Delta on every active view (1e-15)",
+   "detail": "",
+   "status": "PASS",
+   "tolerance": null,
+   "value": 5.551115123125783e-17
+  },
+  {
+   "blocking": true,
+   "category": "views",
+   "check": "Views: kappa_T = sqrt(12) x combination weight of the trend family (unit conversion)",
+   "detail": "",
+   "status": "PASS",
+   "tolerance": null,
+   "value": 0.4156921938165305
+  },
+  {
+   "blocking": true,
+   "category": "views",
+   "check": "Views: policy repricing excluded by the correlation-aware combination rule (weight <= 0 under the pre-registered priors)",
+   "detail": "",
+   "status": "PASS",
+   "tolerance": null,
+   "value": {
+    "policy_repricing": 0.0,
+    "trend": 0.12
+   }
+  },
+  {
+   "blocking": true,
+   "category": "views",
+   "check": "Views: components additive (Delta = Delta_trend_relative + Delta_trend_common + Delta_macro_news)",
+   "detail": "",
+   "status": "PASS",
+   "tolerance": null,
+   "value": 5.551115123125783e-17
+  },
+  {
+   "blocking": true,
+   "category": "views",
+   "check": "Views: an unavailable trend score never becomes a view (no imputation)",
+   "detail": "",
+   "status": "PASS",
+   "tolerance": null,
+   "value": 840
+  },
+  {
+   "blocking": true,
+   "category": "views",
+   "check": "Views: production mode carries no macro component (REVISED_DATA_PROXY excluded)",
+   "detail": "",
+   "status": "PASS",
+   "tolerance": null,
+   "value": ""
+  },
+  {
+   "blocking": true,
+   "category": "posterior",
+   "check": "Posterior: with a view on every sleeve d = Delta/(1+lambda) exactly (full Omega)",
+   "detail": "",
+   "status": "PASS",
+   "tolerance": null,
+   "value": 5.551115123125783e-17
+  },
+  {
+   "blocking": true,
+   "category": "posterior",
+   "check": "Posterior: every date VALID_POSTERIOR or prior (no numerical failure)",
+   "detail": "",
+   "status": "PASS",
+   "tolerance": null,
+   "value": [
+    "VALID_POSTERIOR"
+   ]
+  },
+  {
+   "blocking": true,
+   "category": "posterior",
+   "check": "Posterior: component adjustments sum to the total adjustment",
+   "detail": "",
+   "status": "PASS",
+   "tolerance": null,
+   "value": 8.326672684688674e-17
+  },
+  {
+   "blocking": true,
+   "category": "posterior",
+   "check": "Posterior: lambda -> infinity recovers the prior; lambda -> 0 recovers Q (limiting behaviour)",
+   "detail": "",
+   "status": "PASS",
+   "tolerance": null,
+   "value": "9.3e-10 / 9.3e-12"
+  },
+  {
+   "blocking": true,
+   "category": "posterior",
+   "check": "Posterior: views on a subset spill to unviewed sleeves through Sigma (BL behaviour retained)",
+   "detail": "",
+   "status": "PASS",
+   "tolerance": null,
+   "value": 0.029709025048083825
+  },
+  {
+   "blocking": true,
+   "category": "allocation",
+   "check": "Allocation[BL2_TREND_ONLY]: budget, long-only and hybrid boxes hold on every date",
+   "detail": "",
+   "status": "PASS",
+   "tolerance": null,
+   "value": "84 dates"
+  },
+  {
+   "blocking": true,
+   "category": "allocation",
+   "check": "Allocation[BL2_TREND_ONLY]: ex-ante TE <= cap and every solve certified",
+   "detail": "",
+   "status": "PASS",
+   "tolerance": null,
+   "value": "max TE 0.0200; certificates {'POLISH': 84}"
+  },
+  {
+   "blocking": true,
+   "category": "allocation",
+   "check": "Allocation[BL2_TREND_ONLY]: Sigma well conditioned on every date",
+   "detail": "",
+   "status": "PASS",
+   "tolerance": null,
+   "value": "max 141"
+  },
+  {
+   "blocking": true,
+   "category": "allocation",
+   "check": "Allocation[BL2_EQUILIBRIUM_ONLY]: budget, long-only and hybrid boxes hold on every date",
+   "detail": "",
+   "status": "PASS",
+   "tolerance": null,
+   "value": "84 dates"
+  },
+  {
+   "blocking": true,
+   "category": "allocation",
+   "check": "Allocation[BL2_EQUILIBRIUM_ONLY]: ex-ante TE <= cap and every solve certified",
+   "detail": "",
+   "status": "PASS",
+   "tolerance": null,
+   "value": "max TE 0.0142; certificates {'POLISH': 84}"
+  },
+  {
+   "blocking": true,
+   "category": "allocation",
+   "check": "Allocation[BL2_EQUILIBRIUM_ONLY]: Sigma well conditioned on every date",
+   "detail": "",
+   "status": "PASS",
+   "tolerance": null,
+   "value": "max 141"
+  },
+  {
+   "blocking": true,
+   "category": "allocation",
+   "check": "Allocation[BL2_EXPERIMENTAL_REVISED_MACRO]: budget, long-only and hybrid boxes hold on every date",
+   "detail": "",
+   "status": "PASS",
+   "tolerance": null,
+   "value": "84 dates"
+  },
+  {
+   "blocking": true,
+   "category": "allocation",
+   "check": "Allocation[BL2_EXPERIMENTAL_REVISED_MACRO]: ex-ante TE <= cap and every solve certified",
+   "detail": "",
+   "status": "PASS",
+   "tolerance": null,
+   "value": "max TE 0.0200; certificates {'POLISH': 84}"
+  },
+  {
+   "blocking": true,
+   "category": "allocation",
+   "check": "Allocation[BL2_EXPERIMENTAL_REVISED_MACRO]: Sigma well conditioned on every date",
+   "detail": "",
+   "status": "PASS",
+   "tolerance": null,
+   "value": "max 141"
+  },
+  {
+   "blocking": true,
+   "category": "allocation",
+   "check": "Allocation[BL2_EQUILIBRIUM_ONLY_H1]: budget, long-only and hybrid boxes hold on every date",
+   "detail": "",
+   "status": "PASS",
+   "tolerance": null,
+   "value": "84 dates"
+  },
+  {
+   "blocking": true,
+   "category": "allocation",
+   "check": "Allocation[BL2_EQUILIBRIUM_ONLY_H1]: ex-ante TE <= cap and every solve certified",
+   "detail": "",
+   "status": "PASS",
+   "tolerance": null,
+   "value": "max TE 0.0189; certificates {'POLISH': 84}"
+  },
+  {
+   "blocking": true,
+   "category": "allocation",
+   "check": "Allocation[BL2_EQUILIBRIUM_ONLY_H1]: Sigma well conditioned on every date",
+   "detail": "",
+   "status": "PASS",
+   "tolerance": null,
+   "value": "max 141"
+  },
+  {
+   "blocking": true,
+   "category": "allocation",
+   "check": "Allocation[ABL_H1_BL2_VIEWS]: budget, long-only and hybrid boxes hold on every date",
+   "detail": "",
+   "status": "PASS",
+   "tolerance": null,
+   "value": "84 dates"
+  },
+  {
+   "blocking": true,
+   "category": "allocation",
+   "check": "Allocation[ABL_H1_BL2_VIEWS]: ex-ante TE <= cap and every solve certified",
+   "detail": "",
+   "status": "PASS",
+   "tolerance": null,
+   "value": "max TE 0.0200; certificates {'POLISH': 84}"
+  },
+  {
+   "blocking": true,
+   "category": "allocation",
+   "check": "Allocation[ABL_H1_BL2_VIEWS]: Sigma well conditioned on every date",
+   "detail": "",
+   "status": "PASS",
+   "tolerance": null,
+   "value": "max 141"
+  },
+  {
+   "blocking": true,
+   "category": "allocation",
+   "check": "Allocation[ABL_BL1_VIEWS_BL2_ALLOCATION]: budget, long-only and hybrid boxes hold on every date",
+   "detail": "",
+   "status": "PASS",
+   "tolerance": null,
+   "value": "84 dates"
+  },
+  {
+   "blocking": true,
+   "category": "allocation",
+   "check": "Allocation[ABL_BL1_VIEWS_BL2_ALLOCATION]: ex-ante TE <= cap and every solve certified",
+   "detail": "",
+   "status": "PASS",
+   "tolerance": null,
+   "value": "max TE 0.0200; certificates {'POLISH': 84}"
+  },
+  {
+   "blocking": true,
+   "category": "allocation",
+   "check": "Allocation[ABL_BL1_VIEWS_BL2_ALLOCATION]: Sigma well conditioned on every date",
+   "detail": "",
+   "status": "PASS",
+   "tolerance": null,
+   "value": "max 141"
+  },
+  {
+   "blocking": true,
+   "category": "allocation",
+   "check": "Allocation[ABL_RELATIVE_ONLY]: budget, long-only and hybrid boxes hold on every date",
+   "detail": "",
+   "status": "PASS",
+   "tolerance": null,
+   "value": "84 dates"
+  },
+  {
+   "blocking": true,
+   "category": "allocation",
+   "check": "Allocation[ABL_RELATIVE_ONLY]: ex-ante TE <= cap and every solve certified",
+   "detail": "",
+   "status": "PASS",
+   "tolerance": null,
+   "value": "max TE 0.0200; certificates {'POLISH': 84}"
+  },
+  {
+   "blocking": true,
+   "category": "allocation",
+   "check": "Allocation[ABL_RELATIVE_ONLY]: Sigma well conditioned on every date",
+   "detail": "",
+   "status": "PASS",
+   "tolerance": null,
+   "value": "max 141"
+  },
+  {
+   "blocking": true,
+   "category": "allocation",
+   "check": "Allocation[ABL_COMMON_ONLY]: budget, long-only and hybrid boxes hold on every date",
+   "detail": "",
+   "status": "PASS",
+   "tolerance": null,
+   "value": "84 dates"
+  },
+  {
+   "blocking": true,
+   "category": "allocation",
+   "check": "Allocation[ABL_COMMON_ONLY]: ex-ante TE <= cap and every solve certified",
+   "detail": "",
+   "status": "PASS",
+   "tolerance": null,
+   "value": "max TE 0.0200; certificates {'POLISH': 84}"
+  },
+  {
+   "blocking": true,
+   "category": "allocation",
+   "check": "Allocation[ABL_COMMON_ONLY]: Sigma well conditioned on every date",
+   "detail": "",
+   "status": "PASS",
+   "tolerance": null,
+   "value": "max 141"
+  },
+  {
+   "blocking": true,
+   "category": "allocation",
+   "check": "Allocation[ABL_DIAG_OMEGA]: budget, long-only and hybrid boxes hold on every date",
+   "detail": "",
+   "status": "PASS",
+   "tolerance": null,
+   "value": "84 dates"
+  },
+  {
+   "blocking": true,
+   "category": "allocation",
+   "check": "Allocation[ABL_DIAG_OMEGA]: ex-ante TE <= cap and every solve certified",
+   "detail": "",
+   "status": "PASS",
+   "tolerance": null,
+   "value": "max TE 0.0200; certificates {'POLISH': 84}"
+  },
+  {
+   "blocking": true,
+   "category": "allocation",
+   "check": "Allocation[ABL_DIAG_OMEGA]: Sigma well conditioned on every date",
+   "detail": "",
+   "status": "PASS",
+   "tolerance": null,
+   "value": "max 141"
+  },
+  {
+   "blocking": true,
+   "category": "allocation",
+   "check": "Allocation[ABL_IC_EFF_LOW]: budget, long-only and hybrid boxes hold on every date",
+   "detail": "",
+   "status": "PASS",
+   "tolerance": null,
+   "value": "84 dates"
+  },
+  {
+   "blocking": true,
+   "category": "allocation",
+   "check": "Allocation[ABL_IC_EFF_LOW]: ex-ante TE <= cap and every solve certified",
+   "detail": "",
+   "status": "PASS",
+   "tolerance": null,
+   "value": "max TE 0.0200; certificates {'POLISH': 84}"
+  },
+  {
+   "blocking": true,
+   "category": "allocation",
+   "check": "Allocation[ABL_IC_EFF_LOW]: Sigma well conditioned on every date",
+   "detail": "",
+   "status": "PASS",
+   "tolerance": null,
+   "value": "max 141"
+  },
+  {
+   "blocking": true,
+   "category": "allocation",
+   "check": "Allocation[ABL_IC_EFF_HIGH]: budget, long-only and hybrid boxes hold on every date",
+   "detail": "",
+   "status": "PASS",
+   "tolerance": null,
+   "value": "84 dates"
+  },
+  {
+   "blocking": true,
+   "category": "allocation",
+   "check": "Allocation[ABL_IC_EFF_HIGH]: ex-ante TE <= cap and every solve certified",
+   "detail": "",
+   "status": "PASS",
+   "tolerance": null,
+   "value": "max TE 0.0200; certificates {'POLISH': 84}"
+  },
+  {
+   "blocking": true,
+   "category": "allocation",
+   "check": "Allocation[ABL_IC_EFF_HIGH]: Sigma well conditioned on every date",
+   "detail": "",
+   "status": "PASS",
+   "tolerance": null,
+   "value": "max 141"
+  },
+  {
+   "blocking": true,
+   "category": "allocation",
+   "check": "Allocation[ABL_H6_BL2_VIEWS]: budget, long-only and hybrid boxes hold on every date",
+   "detail": "",
+   "status": "PASS",
+   "tolerance": null,
+   "value": "84 dates"
+  },
+  {
+   "blocking": true,
+   "category": "allocation",
+   "check": "Allocation[ABL_H6_BL2_VIEWS]: ex-ante TE <= cap and every solve certified",
+   "detail": "",
+   "status": "PASS",
+   "tolerance": null,
+   "value": "max TE 0.0200; certificates {'POLISH': 84}"
+  },
+  {
+   "blocking": true,
+   "category": "allocation",
+   "check": "Allocation[ABL_H6_BL2_VIEWS]: Sigma well conditioned on every date",
+   "detail": "",
+   "status": "PASS",
+   "tolerance": null,
+   "value": "max 141"
+  },
+  {
+   "blocking": true,
+   "category": "allocation",
+   "check": "Allocation: equilibrium-only h = 1 reproduces the frozen Phase 7 S4 targets bitwise (engine equivalence)",
+   "detail": "max abs diff 0.00e+00",
+   "status": "PASS",
+   "tolerance": null,
+   "value": "84 dates"
+  },
+  {
+   "blocking": true,
+   "category": "simulation",
+   "check": "Simulation: self-financing ledger identities (gross and net) hold on every holding period",
+   "detail": "",
+   "status": "PASS",
+   "tolerance": null,
+   "value": 4.666406150377611e-16
+  },
+  {
+   "blocking": true,
+   "category": "simulation",
+   "check": "Simulation: frozen BL 1.0 targets re-simulated reproduce the frozen Phase 7 S1 monthly net returns exactly",
+   "detail": "83 periods",
+   "status": "PASS",
+   "tolerance": null,
+   "value": 0.0
+  },
+  {
+   "blocking": true,
+   "category": "simulation",
+   "check": "Simulation: rebalanced benchmark reproduces the frozen Phase 7 S2 monthly net returns exactly",
+   "detail": "",
+   "status": "PASS",
+   "tolerance": null,
+   "value": 0.0
+  },
+  {
+   "blocking": true,
+   "category": "simulation",
+   "check": "Simulation: equilibrium-only with h = 1 through the BL 2.0 pipeline reproduces the frozen Phase 7 S4 exactly (engine equivalence)",
+   "detail": "",
+   "status": "PASS",
+   "tolerance": null,
+   "value": 0.0
+  },
+  {
+   "blocking": true,
+   "category": "simulation",
+   "check": "Simulation: identical window for every strategy (83 completed holding periods)",
+   "detail": "",
+   "status": "PASS",
+   "tolerance": null,
+   "value": {
+    "ABL_BL1_VIEWS_BL2_ALLOCATION": 83,
+    "ABL_COMMON_ONLY": 83,
+    "ABL_DIAG_OMEGA": 83,
+    "ABL_H1_BL2_VIEWS": 83,
+    "ABL_H6_BL2_VIEWS": 83,
+    "ABL_IC_EFF_HIGH": 83,
+    "ABL_IC_EFF_LOW": 83,
+    "ABL_RELATIVE_ONLY": 83,
+    "BENCH_REBALANCED": 83,
+    "BL1_FROZEN": 83,
+    "BL2_EQUILIBRIUM_ONLY": 83,
+    "BL2_EQUILIBRIUM_ONLY_H1": 83,
+    "BL2_EXPERIMENTAL_REVISED_MACRO": 83,
+    "BL2_TREND_ONLY": 83
+   }
+  },
+  {
+   "blocking": true,
+   "category": "lookahead",
+   "check": "Look-ahead: truncating every price observation after the cut date leaves trend signals, views, posterior and targets up to the cut bitwise unchanged",
+   "detail": "trend True; targets True",
+   "status": "PASS",
+   "tolerance": null,
+   "value": "2023-12-29"
+  },
+  {
+   "blocking": true,
+   "category": "lookahead",
+   "check": "Look-ahead: corrupting every macro observation not yet available at the cut (release lags, H.15 lag, quote dates) leaves every factor up to the cut bitwise unchanged",
+   "detail": "",
+   "status": "PASS",
+   "tolerance": null,
+   "value": "2023-12-29"
+  },
+  {
+   "blocking": true,
+   "category": "reproducibility",
+   "check": "Reproducibility: second independent build in a fresh interpreter is byte-identical",
+   "detail": "",
+   "status": "PASS",
+   "tolerance": null,
+   "value": "97 files"
+  },
+  {
+   "blocking": true,
+   "category": "reproducibility",
+   "check": "Reproducibility: identical validation checks and metadata",
+   "detail": "",
+   "status": "PASS",
+   "tolerance": null,
+   "value": 105
+  },
+  {
+   "blocking": true,
+   "category": "preservation",
+   "check": "Preservation: every frozen BL 1.0 file (outputs, code, configs, data, dashboards, tests) unchanged by the build",
+   "detail": "",
+   "status": "PASS",
+   "tolerance": null,
+   "value": "5875 files"
+  },
+  {
+   "blocking": true,
+   "category": "reproducibility",
+   "check": "Code provenance covers every project module the pipeline loads",
+   "detail": "",
+   "status": "PASS",
+   "tolerance": null,
+   "value": "53 files hashed"
+  }
+ ],
+ "checks_by_category": {
+  "allocation": 37,
+  "lookahead": 2,
+  "macro": 11,
+  "posterior": 5,
+  "preservation": 1,
+  "reproducibility": 3,
+  "simulation": 5,
+  "trend": 8,
+  "upstream": 30,
+  "views": 7
+ },
+ "checks_passed": 109,
+ "checks_total": 109,
+ "run_id": "BL2_BL2_20261013T105533Z_7954ca6b",
+ "supersedes": {
+  "archived_as": "superseded/BL2_OUTPUT_CONTRACT__BL2_BL2_20261013T104611Z_7954ca6b.json",
+  "bl2_run_id": "BL2_BL2_20261013T104611Z_7954ca6b",
+  "contract_sha256": "3ae069c5f6e9a9d78eb266f05b9b89c4fce939b31b4caaba5da4fcdc9f9b6e3b"
+ },
+ "validation_status": "BL 2.0 VALIDATED \u2014 RESEARCH CONFIGURATION (parameters provisional, awaiting user ratification)"
+}

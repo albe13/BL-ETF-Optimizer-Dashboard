@@ -1,0 +1,204 @@
+# LIQUID_GMP_2026_V1 -- frozen strategic benchmark definition.
+#
+# Source: State Street Global Market Portfolio 2026, with Private Debt and
+# High Yield intentionally excluded and the remaining asset classes
+# proportionally renormalized (renormalization performed upstream, by the user).
+#
+# FROZEN. These weights are never optimized, tuned on performance, or reset.
+# Weights are stored as exact decimal STRINGS so the sum can be validated
+# exactly (decimal.Decimal) rather than in binary floating point.
+#
+# Identity provenance:
+#   ticker      = Bloomberg security string in the price workbook sheet header
+#   isin        = verified against issuer / exchange listing data on 2026-10-06
+#                 (and, where present, the legacy reconciled security master)
+#   income      = distribution policy of the exact share class; it determines
+#                 whether PX_LAST is a total-return-equivalent series.
+
+benchmark_id: LIQUID_GMP_2026_V1
+version: 1
+base_currency: EUR
+weight_sum_target: "1"
+excluded_asset_classes:
+  - Private Debt
+  - High Yield
+
+components:
+  - asset_class: Equity
+    target_weight: "0.4570"
+    source_sheet: listed equity
+    ticker: IWDA LN Equity
+    isin: IE00B4L5Y983
+    etf_name: iShares Core MSCI World UCITS ETF USD (Acc)
+    underlying_index: MSCI World
+    geography: Developed markets, global
+    fund_currency: USD
+    listing_currency: USD (LSE line); workbook values requested in EUR
+    hedging: Unhedged
+    income_treatment: Accumulating
+    proxy_quality: GOOD_PROXY
+    identity_verification: VERIFIED (legacy master + issuer/listing data)
+    notes: >-
+      Developed-markets only; emerging-market equities (part of global equity
+      in the GMP) are not represented.
+
+  - asset_class: Government Bonds
+    target_weight: "0.2011"
+    source_sheet: government
+    ticker: DBZB GY Equity
+    isin: LU0378818131
+    etf_name: Xtrackers II Global Government Bond UCITS ETF 1C EUR Hedged
+    underlying_index: FTSE World Government Bond Index - Developed Markets (EUR hedged)
+    geography: Developed markets, global
+    fund_currency: EUR
+    listing_currency: EUR (Xetra)
+    hedging: EUR hedged
+    income_treatment: Accumulating
+    proxy_quality: GOOD_PROXY
+    identity_verification: VERIFIED (issuer/listing data)
+    notes: >-
+      Developed sovereigns only, EUR-hedged; GMP government bonds are a
+      market-cap aggregate that is not currency-hedged.
+
+  - asset_class: Investment Grade Credit
+    target_weight: "0.0870"
+    source_sheet: IG CORPORATE
+    ticker: IBCQ GY Equity
+    isin: IE00B9M6SJ31
+    etf_name: iShares Global Corp Bond EUR Hedged UCITS ETF (Dist)
+    underlying_index: Bloomberg Global Aggregate Corporate Index (EUR hedged)
+    geography: Global
+    fund_currency: EUR
+    listing_currency: EUR (Xetra)
+    hedging: EUR hedged
+    income_treatment: Distributing
+    proxy_quality: VERY_GOOD
+    identity_verification: VERIFIED (issuer/listing data)
+    notes: >-
+      Distributing share class: PX_LAST excludes coupons paid out.
+
+  - asset_class: Gold
+    target_weight: "0.0621"
+    source_sheet: GOLD
+    ticker: SGLD IM Equity
+    isin: IE00B579F325
+    etf_name: Invesco Physical Gold ETC
+    underlying_index: LBMA Gold Price (USD spot)
+    geography: Global commodity
+    fund_currency: USD
+    listing_currency: EUR (Borsa Italiana)
+    hedging: Unhedged
+    income_treatment: No income (physical ETC)
+    proxy_quality: VERY_GOOD
+    identity_verification: VERIFIED (legacy master + issuer/listing data)
+    notes: Physically backed ETC; no distributions, price is the total return.
+
+  - asset_class: Private Equity Proxy
+    target_weight: "0.0492"
+    source_sheet: PRIVATE EQUITY
+    ticker: XLPE IM Equity
+    isin: LU0322250712
+    etf_name: Xtrackers LPX Private Equity Swap UCITS ETF 1C
+    underlying_index: LPX Major Market Index (TR)
+    geography: Global listed private-equity companies
+    fund_currency: EUR
+    listing_currency: EUR (Borsa Italiana)
+    hedging: Unhedged
+    income_treatment: Accumulating
+    proxy_quality: IMPERFECT_PROXY
+    identity_verification: VERIFIED (legacy master + issuer/listing data)
+    notes: >-
+      Listed private-equity managers/vehicles (synthetic replication), not
+      private-equity fund NAVs; equity-market beta is much higher and returns
+      are not appraisal-smoothed.
+
+  - asset_class: Emerging Debt
+    target_weight: "0.0483"
+    source_sheet: EMERGING DEBT
+    ticker: EMBE IM Equity
+    isin: IE00B9M6RS56
+    etf_name: iShares J.P. Morgan $ EM Bond EUR Hedged UCITS ETF (Dist)
+    underlying_index: J.P. Morgan EMBI Global Diversified Core (EUR hedged)
+    geography: Emerging markets
+    fund_currency: EUR
+    listing_currency: EUR (Borsa Italiana)
+    hedging: EUR hedged
+    income_treatment: Distributing
+    proxy_quality: GOOD_PROXY
+    identity_verification: VERIFIED (legacy master + issuer/listing data)
+    notes: >-
+      Hard-currency sovereign debt only (no local-currency EMD). Monthly
+      distributing share class: PX_LAST excludes coupons paid out.
+
+  - asset_class: Securitized
+    target_weight: "0.0460"
+    source_sheet: SECURITISED
+    ticker: IMBS LN Equity
+    isin: IE00BZ6V7883
+    etf_name: iShares US Mortgage Backed Securities UCITS ETF USD (Dist)
+    underlying_index: Bloomberg US MBS Index
+    geography: United States
+    fund_currency: USD
+    listing_currency: USD (LSE line); workbook values requested in EUR
+    hedging: Unhedged
+    income_treatment: Distributing
+    proxy_quality: GOOD_PROXY
+    identity_verification: VERIFIED (issuer/listing data)
+    notes: >-
+      US agency MBS only (no ABS/CMBS/covered bonds); USD exposure unhedged.
+      Distributing share class: PX_LAST excludes coupons paid out. Fund launched
+      2016-05-23, before the workbook start.
+
+  - asset_class: Real Estate
+    target_weight: "0.0327"
+    source_sheet: REAL ESTATE
+    ticker: SPYJ GY Equity
+    isin: IE00B8GF1M35
+    etf_name: SPDR Dow Jones Global Real Estate UCITS ETF (Dist)
+    underlying_index: Dow Jones Global Select Real Estate Securities Index
+    geography: Global
+    fund_currency: USD
+    listing_currency: EUR (Xetra)
+    hedging: Unhedged
+    income_treatment: Distributing
+    proxy_quality: GOOD_PROXY
+    identity_verification: VERIFIED (legacy master + issuer/listing data)
+    notes: >-
+      Listed REITs / real-estate securities. Quarterly distributing share
+      class: PX_LAST excludes dividends paid out.
+
+  - asset_class: Inflation Linked
+    target_weight: "0.0143"
+    source_sheet: INFLATION
+    ticker: IUS5 GY Equity
+    isin: IE00B3B8PX14
+    etf_name: iShares Global Inflation Linked Govt Bond UCITS ETF USD (Acc)
+    underlying_index: Bloomberg World Government Inflation-Linked Bond Index
+    geography: Developed markets, global
+    fund_currency: USD
+    listing_currency: EUR (Xetra)
+    hedging: Unhedged
+    income_treatment: Accumulating
+    proxy_quality: GOOD_PROXY
+    identity_verification: VERIFIED (issuer/listing data)
+    notes: >-
+      Unhedged USD share class, whereas the nominal government sleeve is
+      EUR-hedged: FX treatment is not consistent across the bond sleeves.
+
+  - asset_class: Convertibles
+    target_weight: "0.0023"
+    source_sheet: CONVERTIBLES
+    ticker: CONV IM Equity
+    isin: IE00BNH72088
+    etf_name: SPDR FTSE Global Convertible Bond UCITS ETF (Dist)
+    underlying_index: FTSE Qualified Global Convertible Index
+    geography: Global
+    fund_currency: USD
+    listing_currency: EUR (Borsa Italiana)
+    hedging: Unhedged
+    income_treatment: Distributing
+    proxy_quality: VERY_GOOD
+    identity_verification: VERIFIED (issuer/listing data)
+    notes: >-
+      Semi-annual distributing share class (low coupon asset class): PX_LAST
+      excludes distributions paid out.
