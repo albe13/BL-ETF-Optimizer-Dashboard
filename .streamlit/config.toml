@@ -1,0 +1,24 @@
+# Institutional colour palette of the BL ETF Optimizer dashboard. Typography is set in bldash/core/design.py (CSS) and is not
+# overridden here; chart colours (strategies, ETFs, diverging/sequential scales) live in the same module.
+
+[theme]
+base = "light"
+primaryColor = "#172B4D"
+backgroundColor = "#F5F7FA"
+secondaryBackgroundColor = "#FFFFFF"
+textColor = "#172B4D"
+linkColor = "#2563EB"
+borderColor = "#E2E8F0"
+dataframeBorderColor = "#E2E8F0"
+dataframeHeaderBackgroundColor = "#F5F7FA"
+codeBackgroundColor = "#F1F5F9"
+showSidebarBorder = false
+
+[theme.sidebar]
+primaryColor = "#F1F5F9"
+backgroundColor = "#142238"
+secondaryBackgroundColor = "#263B57"
+textColor = "#F1F5F9"
+linkColor = "#F1F5F9"
+borderColor = "#263B57"
+codeBackgroundColor = "#263B57"

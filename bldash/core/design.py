@@ -21,14 +21,16 @@ from bldash.core import registry as R
 SLOTS: List[str] = ["#2a78d6", "#eb6834", "#1baf7a", "#eda100", "#e87ba4", "#008300", "#4a3aa7", "#e34948"]   # validated categorical order
 BLUE_RAMP: Dict[int, str] = {100: "#cde2fb", 150: "#b7d3f6", 200: "#9ec5f4", 250: "#86b6ef", 300: "#6da7ec", 350: "#5598e7", 400: "#3987e5", 450: "#2a78d6",
                              500: "#256abf", 550: "#1c5cab", 600: "#184f95", 650: "#104281", 700: "#0d366b"}
-INK, INK2, MUTED, GRID, AXIS, SURFACE, PLANE = "#0b0b0b", "#52514e", "#898781", "#e1e0d9", "#c3c2b7", "#ffffff", "#f7f7f5"
-POS, NEG, NEUTRAL = "#2a78d6", "#d03b3b", "#f0efec"            # diverging poles (blue = positive, red = negative), neutral midpoint
+INK, INK2, MUTED, GRID, AXIS, SURFACE, PLANE = "#172B4D", "#64748B", "#7C8BA1", "#E2E8F0", "#CBD5E1", "#FFFFFF", "#F5F7FA"
+SIDEBAR_BG, SIDEBAR_SELECTED, SIDEBAR_TEXT = "#142238", "#263B57", "#F1F5F9"             # also set natively in .streamlit/config.toml
+POS, NEG, NEUTRAL = "#2a78d6", "#d03b3b", "#F1F5F9"            # diverging poles (blue = positive, red = negative), neutral midpoint
 GOOD, WARN, SERIOUS, CRITICAL = "#0ca30c", "#fab219", "#ec835a", "#d03b3b"
 DIVERGING = [[0.0, "#104281"], [0.25, "#6da7ec"], [0.5, NEUTRAL], [0.75, "#ec835a"], [1.0, "#b91c1c"]]
 SEQUENTIAL = [[0.0, BLUE_RAMP[100]], [0.5, BLUE_RAMP[400]], [1.0, BLUE_RAMP[700]]]
 
+BL1_COLOR, BL2_COLOR, BENCHMARK_COLOR = "#2563EB", "#0D9488", "#94A3B8"
 STRATEGY_COLORS: Dict[str, str] = {
-    R.BL1: SLOTS[0], R.BL2: SLOTS[2], R.BENCHMARK: INK2,
+    R.BL1: BL1_COLOR, R.BL2: BL2_COLOR, R.BENCHMARK: BENCHMARK_COLOR,
     "BL2_EQUILIBRIUM_ONLY": SLOTS[6], "BL2_EQUILIBRIUM_ONLY_H1": BLUE_RAMP[300], "BL2_EXPERIMENTAL_REVISED_MACRO": SLOTS[1],
     "ABL_H1_BL2_VIEWS": SLOTS[3], "ABL_H6_BL2_VIEWS": SLOTS[4], "ABL_BL1_VIEWS_BL2_ALLOCATION": SLOTS[5], "ABL_RELATIVE_ONLY": SLOTS[7],
     "ABL_COMMON_ONLY": BLUE_RAMP[650], "ABL_DIAG_OMEGA": MUTED, "ABL_IC_EFF_LOW": BLUE_RAMP[250], "ABL_IC_EFF_HIGH": BLUE_RAMP[550],
@@ -57,16 +59,16 @@ def strategy_label(s: str) -> str:
 def _template() -> go.layout.Template:
     t = go.layout.Template()
     t.layout = go.Layout(
-        paper_bgcolor="rgba(0,0,0,0)", plot_bgcolor="rgba(0,0,0,0)", font=dict(family=FONT, size=12, color=INK2),
+        paper_bgcolor=SURFACE, plot_bgcolor=SURFACE, font=dict(family=FONT, size=12, color=INK2),
         title=dict(font=dict(size=14, color=INK, family=FONT), x=0, xanchor="left", pad=dict(l=0, b=6)),
         margin=dict(l=10, r=14, t=44, b=10), hovermode="x unified",
-        hoverlabel=dict(bgcolor="#ffffff", bordercolor=GRID, font=dict(family=FONT, size=11, color=INK)),
+        hoverlabel=dict(bgcolor=SURFACE, bordercolor=GRID, font=dict(family=FONT, size=11, color=INK)),
         legend=dict(orientation="h", yanchor="bottom", y=1.0, xanchor="left", x=0, font=dict(size=11, color=INK2), bgcolor="rgba(0,0,0,0)", itemwidth=30),
         xaxis=dict(showgrid=False, linecolor=AXIS, linewidth=1, ticks="outside", tickcolor=AXIS, ticklen=4, tickfont=dict(size=11, color=MUTED), zeroline=False,
                    title=dict(font=dict(size=11, color=MUTED))),
         yaxis=dict(showgrid=True, gridcolor=GRID, gridwidth=1, zeroline=False, linecolor="rgba(0,0,0,0)", tickfont=dict(size=11, color=MUTED),
                    title=dict(font=dict(size=11, color=MUTED))),
-        colorway=[SLOTS[0], SLOTS[2], INK2, SLOTS[1], SLOTS[6], SLOTS[3], SLOTS[4], SLOTS[5], SLOTS[7]],
+        colorway=[BL1_COLOR, BL2_COLOR, BENCHMARK_COLOR, SLOTS[1], SLOTS[6], SLOTS[3], SLOTS[4], SLOTS[5], SLOTS[7]],
     )
     return t
 
@@ -155,13 +157,13 @@ def grouped_bar(categories: Sequence[str], groups: Dict[str, Sequence[float]], c
     return fig
 
 
-def stacked_area(W: pd.DataFrame, title: str = "", height: int = 400, colors: Optional[Dict[str, str]] = None, yfmt: str = ".0%") -> go.Figure:
+def stacked_area(W: pd.DataFrame, title: str = "", height: int = 400, colors: Optional[Dict[str, str]] = None, yfmt: str = ".0%", legend: bool = True) -> go.Figure:
     fig = go.Figure()
     colors = colors or ETF_COLORS
     for a in [c for c in R.ASSETS if c in W.columns]:
         fig.add_trace(go.Scatter(x=W.index, y=W[a].to_numpy(), name=R.ASSET_SHORT.get(a, a), mode="lines", stackgroup="one",
                                  line=dict(width=0.8, color=SURFACE), fillcolor=colors.get(a, MUTED), hovertemplate=f"{a}: %{{y:.1%}}<extra></extra>"))
-    finish(fig, height, title, "weight", yfmt)
+    finish(fig, height, title, "weight", yfmt, legend=legend)
     fig.update_layout(legend=dict(traceorder="normal"))
     return fig
 
@@ -237,9 +239,10 @@ def fmt_month(x) -> str:
 CSS = f"""
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
-:root {{ --bl-ink:{INK}; --bl-ink2:{INK2}; --bl-muted:{MUTED}; --bl-line:{GRID}; --bl-card:#ffffff; --bl-plane:{PLANE}; --bl-accent:{BLUE_RAMP[550]}; }}
+:root {{ --bl-ink:{INK}; --bl-ink2:{INK2}; --bl-muted:{MUTED}; --bl-line:{GRID}; --bl-card:{SURFACE}; --bl-plane:{PLANE}; --bl-accent:{BLUE_RAMP[550]};
+        --bl-side:{SIDEBAR_BG}; --bl-side-sel:{SIDEBAR_SELECTED}; --bl-side-ink:{SIDEBAR_TEXT}; }}
 html, body, [data-testid="stAppViewContainer"], .stMarkdown, .stDataFrame {{ font-family: {FONT}; }}
-.block-container {{ padding-top: 1.6rem; padding-bottom: 3rem; max-width: 1480px; }}
+.block-container {{ padding-top: 2.6rem; padding-bottom: 3rem; max-width: 1480px; }}
 h1, h2, h3 {{ font-family: {FONT}; letter-spacing: -0.01em; color: var(--bl-ink); }}
 h1 {{ font-size: 1.85rem !important; font-weight: 650 !important; margin-bottom: 0.2rem !important; }}
 h2 {{ font-size: 1.25rem !important; font-weight: 600 !important; margin-top: 1.4rem !important; }}
@@ -248,7 +251,14 @@ h3 {{ font-size: 1.02rem !important; font-weight: 600 !important; margin-top: 1.
 [data-testid="stMetricLabel"] p {{ font-size: 0.78rem; color: var(--bl-ink2); text-transform: none; letter-spacing: 0; }}
 [data-testid="stMetricValue"] {{ font-size: 1.45rem; font-weight: 600; color: var(--bl-ink); }}
 [data-testid="stMetricDelta"] {{ font-size: 0.8rem; }}
-section[data-testid="stSidebar"] {{ background: var(--bl-plane); border-right: 1px solid var(--bl-line); }}
+section[data-testid="stSidebar"] {{ background: var(--bl-side); }}
+/* Streamlit opens the sidebar at a hard-coded 256px (inline style) — 22px short of a full YYYY-MM-DD in the date selector. Only that untouched
+   default is widened: a user-resized width is a different inline value and is left alone; collapse (max-width 0) and the 90%-of-window cap still apply. */
+section[data-testid="stSidebar"][style*="width: 256px"] {{ width: 288px !important; }}
+section[data-testid="stSidebar"] [data-testid="stCaptionContainer"] {{ color: var(--bl-side-ink); opacity: 0.78; }}
+[data-testid="stSidebarNav"] a[aria-current="page"] {{ background: var(--bl-side-sel); border-radius: 8px; }}
+[data-testid="stSidebarNav"] a[aria-current="page"] span {{ font-weight: 600; }}
+[data-testid="stSidebarNav"] a:hover {{ background: rgba(38,59,87,0.6); }}
 section[data-testid="stSidebar"] .stMarkdown p {{ font-size: 0.86rem; }}
 .bl-kicker {{ font-size: 0.72rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--bl-accent); margin-bottom: 0.15rem; }}
 .bl-subtitle {{ font-size: 1.02rem; color: var(--bl-ink2); margin-bottom: 0.9rem; max-width: 980px; line-height: 1.45; }}
@@ -260,7 +270,7 @@ section[data-testid="stSidebar"] .stMarkdown p {{ font-size: 0.86rem; }}
 .bl-card .val {{ font-size: 1.5rem; font-weight: 600; color: var(--bl-ink); line-height: 1.15; }}
 .bl-card .sub {{ font-size: 0.76rem; color: var(--bl-muted); margin-top: 4px; }}
 .bl-card .swatch {{ display:inline-block; width: 10px; height: 10px; border-radius: 2px; margin-right: 6px; vertical-align: middle; }}
-.bl-badge {{ display:inline-block; font-size: 0.7rem; font-weight: 600; letter-spacing: 0.04em; padding: 2px 8px; border-radius: 999px; border: 1px solid var(--bl-line); color: var(--bl-ink2); background: #fff; margin-right: 6px; }}
+.bl-badge {{ display:inline-block; font-size: 0.7rem; font-weight: 600; letter-spacing: 0.04em; padding: 2px 8px; border-radius: 999px; border: 1px solid var(--bl-line); color: var(--bl-ink2); background: var(--bl-card); margin-right: 6px; }}
 .bl-badge.good {{ color:#0a6f0a; border-color:#9fd89f; background:#f1faf1; }}
 .bl-badge.warn {{ color:#8a5a00; border-color:#f1d27a; background:#fff8e6; }}
 .bl-badge.bad {{ color:#9b1c1c; border-color:#f0b3b3; background:#fff1f1; }}
@@ -280,7 +290,11 @@ section[data-testid="stSidebar"] .stMarkdown p {{ font-size: 0.86rem; }}
 .bl-flow .box .b {{ font-size: 0.76rem; color: var(--bl-ink2); line-height: 1.35; margin-top: 3px; }}
 .bl-flow .arrow {{ align-self: center; color: var(--bl-muted); font-size: 1.1rem; padding: 0 2px; }}
 div[data-testid="stDataFrame"] {{ border: 1px solid var(--bl-line); border-radius: 8px; }}
+[data-testid="stPlotlyChart"] {{ background: var(--bl-card); border: 1px solid var(--bl-line); border-radius: 10px; overflow: hidden; }}
 .stTabs [data-baseweb="tab"] {{ font-size: 0.9rem; font-weight: 500; }}
+.bl-legend {{ display:flex; flex-wrap: wrap; justify-content: center; gap: 6px 16px; margin: 0 0 0.6rem 0; font-size: 0.8rem; color: var(--bl-ink2); }}
+.bl-legend .it {{ display:inline-flex; align-items: center; white-space: nowrap; }}
+.bl-legend .sw {{ display:inline-block; width: 12px; height: 12px; border-radius: 2px; margin-right: 6px; }}
 </style>
 """
 
@@ -339,6 +353,17 @@ def steps(items: List[Dict[str, str]], cols: int = 3) -> None:
         row = st.columns(cols)
         for col, it in zip(row, items[i:i + cols]):
             col.markdown(f'<div class="bl-step"><div class="n">{it["n"]}</div><div class="h">{it["h"]}</div><div class="b">{it["b"]}</div></div>', unsafe_allow_html=True)
+
+
+def shared_legend(*figs: go.Figure) -> None:
+    """One HTML legend for several figures that hide their own: built from the figures' traces (name + fill/line colour), so it cannot drift from the charts."""
+    items: Dict[str, str] = {}
+    for fig in figs:
+        for tr in fig.data:
+            col = getattr(tr, "fillcolor", None) or (tr.line.color if getattr(tr, "line", None) is not None else None) or MUTED
+            items.setdefault(tr.name, col)
+    st.markdown('<div class="bl-legend">' + "".join(f'<span class="it"><span class="sw" style="background:{c}"></span>{n}</span>' for n, c in items.items()) + "</div>",
+                unsafe_allow_html=True)
 
 
 def small(text: str) -> None:

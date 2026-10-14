@@ -77,9 +77,11 @@ def render() -> None:
     with tabs[1]:
         W1, W2 = M.targets_wide(store, R.BL1), M.targets_wide(store, R.BL2)
         X.section("C · Historical stacked allocation", "target weights at every decision date")
+        f1, f2 = X.stacked_area(W1, "BL 1.0 target weights", 400, legend=False), X.stacked_area(W2, "BL 2.0 target weights", 400, legend=False)
+        X.shared_legend(f1, f2)
         c1, c2 = st.columns(2)
-        c1.plotly_chart(X.stacked_area(W1, "BL 1.0 target weights", 400), use_container_width=True, key="al_stack1")
-        c2.plotly_chart(X.stacked_area(W2, "BL 2.0 target weights", 400), use_container_width=True, key="al_stack2")
+        c1.plotly_chart(f1, use_container_width=True, key="al_stack1")
+        c2.plotly_chart(f2, use_container_width=True, key="al_stack2")
         X.section("D · Historical active-weight heatmap", "target − benchmark in percentage points (blue = overweight, red = underweight)")
         A1, A2 = (W1.sub(b.to_numpy(), axis=1) * 100).T, (W2.sub(b.to_numpy(), axis=1) * 100).T
         lim = float(max(A1.abs().max().max(), A2.abs().max().max()))
