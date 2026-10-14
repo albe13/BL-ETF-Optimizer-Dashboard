@@ -44,7 +44,28 @@ if missing:
     st.title("BL ETF Optimizer")
     st.warning("**Required artifacts are missing from this deployment:** " + ", ".join(missing) + ". The dashboard cannot start without them.")
     st.stop()
+st.markdown(
+    """
+    <style>
+    [data-testid="stSidebar"] {
+        background-color: #142238;
+    }
 
+    [data-testid="stSidebar"] [data-testid="stMarkdownContainer"] {
+        color: #F1F5F9;
+    }
+
+    [data-testid="stSidebar"] [data-testid="stCaptionContainer"] {
+        color: #CBD5E1;
+    }
+
+    [data-testid="stSidebarNav"] a {
+        color: #F1F5F9;
+    }
+    </style>
+    """,
+    unsafe_allow_html=True
+)
 with st.sidebar:
     st.markdown("### BL ETF Optimizer")
     st.caption("Quantitative multi-asset ETF allocation with Black-Litterman, trend and macroeconomic analysis · EUR · hash-verified frozen runs")
